@@ -30,7 +30,9 @@
   padding: 0;
 }
 
+html,
 body {
+  min-width: 1100px;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   background-color: var(--bg);
   color: var(--text);
@@ -46,7 +48,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 12px;
   position: sticky;
   top: 0;
@@ -62,13 +64,14 @@ body {
   font-weight: 700;
   color: #facc15;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .nav-item {
@@ -81,6 +84,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   transition: 0.2s;
+  white-space: nowrap;
 }
 
 .nav-item:hover {
@@ -104,6 +108,7 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 /* Night Sky Hero Section */
@@ -137,7 +142,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 12px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-bottom: 34px;
 }
 
@@ -154,6 +159,7 @@ body {
   font-size: 0.92rem;
   cursor: pointer;
   transition: 0.2s;
+  white-space: nowrap;
 }
 
 .btn-gold {
@@ -182,7 +188,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 14px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   max-width: 520px;
   margin: 0 auto;
 }
@@ -216,6 +222,7 @@ body {
 
 /* Main Container overlapping Hero */
 .main-wrap {
+  width: 980px;
   max-width: 980px;
   margin: 0 auto;
   padding: 24px 20px 60px;
@@ -270,26 +277,27 @@ body {
   display: flex;
   gap: 24px;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-bottom: 32px;
 }
 
 .featured-art {
   width: 340px;
-  max-width: 100%;
+  min-width: 340px;
   height: 195px;
   border-radius: 12px;
   background: linear-gradient(135deg, #7c2d12 0%, #b45309 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px;
+  padding: 0;
+  overflow: hidden;
 }
 
 .featured-art img {
-  width: 135px;
-  height: 135px;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .pill-red {
@@ -306,7 +314,7 @@ body {
 /* Grid & Tradition Cards */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
@@ -327,14 +335,17 @@ body {
 
 .card-top {
   background: linear-gradient(135deg, #0f293a 0%, #164e63 100%);
-  padding: 18px;
+  padding: 0;
+  height: 165px;
+  overflow: hidden;
   text-align: center;
 }
 
 .card-top img {
-  width: 96px;
-  height: 96px;
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .card-body {
