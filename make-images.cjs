@@ -44,7 +44,7 @@ const ITEMS = [
   ['kurak', '#0f172a', '#1e293b', 'ҚҰРАҚ КӨРПЕ', 'quilt'],
   ['saukele', '#881337', '#9f1239', 'СӘУКЕЛЕ', 'veil'],
   ['uki', '#1e1b4b', '#312e81', 'ҮКІ ТАҒУ', 'feather'],
-  ['shapan', '#451a03', '#78350f', 'ШАПАН ЖАБУ', 'crown'],
+  ['shapan', '#451a03', '#78350f', 'ШАПАН ЖАБУ', 'robe'],
   ['kimeshek', '#0f2942', '#1e3a8a', 'КИМЕШЕК КИЮ', 'veil'],
   ['zergerlik', '#064e3b', '#065f46', 'ЗЕРГЕРЛІК ӨНЕР', 'jewelry'],
   ['besbarmak', '#7c2d12', '#9a3412', 'БЕСБАРМАҚ', 'feast'],
@@ -71,6 +71,7 @@ const SHAPES = {
   star: `<polygon points="200,55 216,105 268,105 225,135 240,185 200,155 160,185 175,135 132,105 184,105" fill="#facc15" stroke="#fef08a" stroke-width="3"/>`,
   horse: `<circle cx="200" cy="125" r="54" stroke="#facc15" stroke-width="5" fill="none"/><path d="M165 150 Q185 95 215 100 Q235 105 230 140 L210 160 L180 160 Z" fill="#d97706" stroke="#fde047" stroke-width="3"/>`,
   crown: `<polygon points="140,165 150,95 180,125 200,80 220,125 250,95 260,165" fill="#facc15" stroke="#fef08a" stroke-width="3"/>`,
+  robe: `<path d="M155 72 L180 65 L200 82 L220 65 L245 72 L278 125 L258 142 L242 112 L248 188 L152 188 L158 112 L142 142 L122 125 Z" fill="#991b1b" stroke="#facc15" stroke-width="4" stroke-linejoin="round"/><line x1="200" y1="82" x2="200" y2="188" stroke="#facc15" stroke-width="5"/><path d="M180 65 L200 95 L220 65" fill="none" stroke="#fde047" stroke-width="4"/><circle cx="178" cy="145" r="6" fill="none" stroke="#facc15" stroke-width="2.5"/><circle cx="222" cy="145" r="6" fill="none" stroke="#facc15" stroke-width="2.5"/>`,
   rings: `<circle cx="175" cy="128" r="36" stroke="#facc15" stroke-width="7" fill="none"/><circle cx="225" cy="128" r="36" stroke="#fde047" stroke-width="7" fill="none"/>`,
   jewelry: `<circle cx="200" cy="125" r="46" stroke="#facc15" stroke-width="8" fill="none"/><circle cx="200" cy="79" r="10" fill="#ef4444" stroke="#fde047" stroke-width="2"/>`,
   path: `<path d="M130 180 Q200 90 270 180" stroke="#facc15" stroke-width="6" fill="none"/><circle cx="200" cy="95" r="18" fill="#fde047"/>`,
@@ -108,3 +109,4 @@ ITEMS.forEach(([id, bg1, bg2, label, shapeKey]) => {
 });
 
 console.log('56 сурет сәтті жасалды!');
+
