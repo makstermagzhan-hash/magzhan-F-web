@@ -2,6 +2,6 @@
   <defs><linearGradient id="g_ashamay" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7c2d12"/><stop offset="100%" stop-color="#9a3412"/></linearGradient></defs>
   <rect width="400" height="240" fill="url(#g_ashamay)"/>
   <rect x="10" y="10" width="380" height="220" rx="14" fill="none" stroke="#facc15" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 6"/>
-  <circle cx="200" cy="125" r="54" stroke="#facc15" stroke-width="5" fill="none"/><path d="M165 150 Q185 95 215 100 Q235 105 230 140 L210 160 L180 160 Z" fill="#d97706" stroke="#fde047" stroke-width="3"/>
+  <path d="M135 155 Q150 95 200 95 Q250 95 265 155 L240 165 Q200 135 160 165 Z" fill="#92400e" stroke="#facc15" stroke-width="4"/><path d="M165 95 L175 68 L195 95 M205 95 L225 68 L235 95" fill="#d97706" stroke="#fde047" stroke-width="3"/><line x1="150" y1="158" x2="142" y2="185" stroke="#fde047" stroke-width="4"/><line x1="250" y1="158" x2="258" y2="185" stroke="#fde047" stroke-width="4"/>
   <text x="200" y="220" fill="#fde047" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="1.5" text-anchor="middle">АШАМАЙҒА МІНГІЗУ</text>
 </svg>

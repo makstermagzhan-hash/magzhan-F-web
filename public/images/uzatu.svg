@@ -2,6 +2,6 @@
   <defs><linearGradient id="g_uzatu" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4c0519"/><stop offset="100%" stop-color="#881337"/></linearGradient></defs>
   <rect width="400" height="240" fill="url(#g_uzatu)"/>
   <rect x="10" y="10" width="380" height="220" rx="14" fill="none" stroke="#facc15" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 6"/>
-  <path d="M130 180 Q200 90 270 180" stroke="#facc15" stroke-width="6" fill="none"/><circle cx="200" cy="95" r="18" fill="#fde047"/>
+  <path d="M135 185 L178 88 L222 88 L265 185 Z" fill="#fef3c7" stroke="#facc15" stroke-width="4"/><path d="M172 155 C172 135 196 135 196 155 C196 175 204 175 204 155 C204 135 228 135 228 155" fill="none" stroke="#d97706" stroke-width="5"/><circle cx="200" cy="68" r="14" fill="#facc15"/>
   <text x="200" y="220" fill="#fde047" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="1.5" text-anchor="middle">ҚЫЗ ҰЗАТУ</text>
 </svg>

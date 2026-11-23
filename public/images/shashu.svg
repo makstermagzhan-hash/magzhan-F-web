@@ -2,6 +2,6 @@
   <defs><linearGradient id="g_shashu" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6b21a8"/><stop offset="100%" stop-color="#7e22ce"/></linearGradient></defs>
   <rect width="400" height="240" fill="url(#g_shashu)"/>
   <rect x="10" y="10" width="380" height="220" rx="14" fill="none" stroke="#facc15" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 6"/>
-  <circle cx="170" cy="135" r="18" fill="#f59e0b" stroke="#fef08a" stroke-width="3"/><circle cx="205" cy="115" r="18" fill="#d97706" stroke="#fef08a" stroke-width="3"/><circle cx="230" cy="142" r="18" fill="#f59e0b" stroke="#fef08a" stroke-width="3"/>
+  <circle cx="162" cy="138" r="14" fill="#fef3c7" stroke="#facc15" stroke-width="3"/><circle cx="200" cy="108" r="16" fill="#f59e0b" stroke="#fef08a" stroke-width="3"/><circle cx="238" cy="136" r="14" fill="#ef4444" stroke="#fde047" stroke-width="3"/><circle cx="182" cy="158" r="12" fill="#facc15"/><circle cx="220" cy="160" r="12" fill="#fef3c7"/><circle cx="145" cy="95" r="5" fill="#fde047"/><circle cx="255" cy="92" r="5" fill="#fde047"/>
   <text x="200" y="220" fill="#fde047" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="1.5" text-anchor="middle">ШАШУ</text>
 </svg>
