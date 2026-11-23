@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <defs>
+    <linearGradient id="g_uki" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#g_uki)"/>
+  <rect x="10" y="10" width="380" height="220" rx="14" fill="none" stroke="#facc15" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 6"/>
+  
+      <path d="M200 190 Q175 120 200 55 Q225 120 200 190 Z" fill="#fef3c7" stroke="#facc15" stroke-width="3.5"/>
+      <line x1="200" y1="55" x2="200" y2="200" stroke="#b45309" stroke-width="3"/>
+      <circle cx="200" cy="100" r="8" fill="#78350f"/>
+      <path d="M185 130 L200 120 L215 130 M182 155 L200 145 L218 155" stroke="#92400e" stroke-width="2.5" fill="none"/>
+    
+  <text x="200" y="220" fill="#fde047" font-family="Arial, sans-serif" font-size="13" font-weight="bold" letter-spacing="2" text-anchor="middle">ҮКІ ТАҒУ</text>
+</svg>

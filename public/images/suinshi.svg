@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <defs>
+    <linearGradient id="g_suinshi" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#854d0e"/>
+      <stop offset="100%" stop-color="#a16207"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#g_suinshi)"/>
+  <rect x="10" y="10" width="380" height="220" rx="14" fill="none" stroke="#facc15" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 6"/>
+  
+      <polygon points="200,55 215,105 268,105 225,135 240,185 200,155 160,185 175,135 132,105 185,105" fill="#facc15" stroke="#fef08a" stroke-width="3"/>
+      <circle cx="200" cy="125" r="16" fill="#dc2626"/>
+    
+  <text x="200" y="220" fill="#fde047" font-family="Arial, sans-serif" font-size="13" font-weight="bold" letter-spacing="2" text-anchor="middle">СҮЙІНШІ</text>
+</svg>

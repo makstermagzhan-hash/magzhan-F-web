@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <defs>
+    <linearGradient id="g_besik" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#g_besik)"/>
+  <rect x="10" y="10" width="380" height="220" rx="14" fill="none" stroke="#facc15" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 6"/>
+  
+      <path d="M105 185 Q200 230 295 185" stroke="#f59e0b" stroke-width="9" fill="none" stroke-linecap="round"/>
+      <rect x="120" y="135" width="160" height="50" rx="10" fill="#b45309" stroke="#fcd34d" stroke-width="3"/>
+      <line x1="130" y1="105" x2="270" y2="105" stroke="#fde047" stroke-width="6" stroke-linecap="round"/>
+      <path d="M130 135 Q130 105 150 105 M270 135 Q270 105 250 105" stroke="#fcd34d" stroke-width="4" fill="none"/>
+      <path d="M155 135 L155 185 M200 135 L200 185 M245 135 L245 185" stroke="#fde047" stroke-width="2.5"/>
+    
+  <text x="200" y="220" fill="#fde047" font-family="Arial, sans-serif" font-size="13" font-weight="bold" letter-spacing="2" text-anchor="middle">БЕСІККЕ САЛУ</text>
+</svg>

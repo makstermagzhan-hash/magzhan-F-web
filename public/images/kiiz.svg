@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <defs>
+    <linearGradient id="g_kiiz" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c2d12"/>
+      <stop offset="100%" stop-color="#9a3412"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#g_kiiz)"/>
+  <rect x="10" y="10" width="380" height="220" rx="14" fill="none" stroke="#facc15" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 6"/>
+  
+      <rect x="125" y="80" width="150" height="100" rx="10" fill="#fef3c7" stroke="#facc15" stroke-width="4"/>
+      <path d="M165 130 C165 105 195 105 195 130 C195 155 205 155 205 130 C205 105 235 105 235 130" stroke="#b91c1c" stroke-width="7" fill="none" stroke-linecap="round"/>
+    
+  <text x="200" y="220" fill="#fde047" font-family="Arial, sans-serif" font-size="13" font-weight="bold" letter-spacing="2" text-anchor="middle">КИІЗ БАСУ</text>
+</svg>

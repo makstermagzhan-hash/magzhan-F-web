@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <defs>
+    <linearGradient id="g_emshektes" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#115e59"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#g_emshektes)"/>
+  <rect x="10" y="10" width="380" height="220" rx="14" fill="none" stroke="#facc15" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 6"/>
+  
+      <path d="M200 180 C140 140 135 90 175 90 C192 90 200 105 200 105 C200 105 208 90 225 90 C265 90 260 140 200 180 Z" fill="#f59e0b" stroke="#fef08a" stroke-width="4"/>
+      <circle cx="178" cy="122" r="7" fill="#fef08a"/><circle cx="222" cy="122" r="7" fill="#fef08a"/>
+    
+  <text x="200" y="220" fill="#fde047" font-family="Arial, sans-serif" font-size="13" font-weight="bold" letter-spacing="2" text-anchor="middle">ЕМШЕКТЕС</text>
+</svg>

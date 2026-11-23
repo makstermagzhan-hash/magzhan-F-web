@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <defs>
+    <linearGradient id="g_kurak" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#g_kurak)"/>
+  <rect x="10" y="10" width="380" height="220" rx="14" fill="none" stroke="#facc15" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 6"/>
+  
+      <rect x="145" y="75" width="110" height="110" stroke="#facc15" stroke-width="4" fill="none"/>
+      <polygon points="145,75 200,130 145,185" fill="#dc2626"/>
+      <polygon points="255,75 200,130 255,185" fill="#2563eb"/>
+      <polygon points="145,75 200,130 255,75" fill="#facc15"/>
+      <polygon points="145,185 200,130 255,185" fill="#059669"/>
+      <rect x="182" y="112" width="36" height="36" fill="#fef08a" transform="rotate(45 200 130)"/>
+    
+  <text x="200" y="220" fill="#fde047" font-family="Arial, sans-serif" font-size="13" font-weight="bold" letter-spacing="2" text-anchor="middle">ҚҰРАҚ КӨРПЕ</text>
+</svg>
