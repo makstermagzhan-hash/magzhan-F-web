@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <defs><linearGradient id="g_nauryzkozhe" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#047857"/><stop offset="100%" stop-color="#059669"/></linearGradient></defs>
+  <rect width="400" height="240" fill="url(#g_nauryzkozhe)"/>
+  <rect x="10" y="10" width="380" height="220" rx="14" fill="none" stroke="#facc15" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 6"/>
+  <path d="M130 120 Q200 200 270 120 Z" fill="#d97706" stroke="#facc15" stroke-width="4"/><ellipse cx="200" cy="120" rx="70" ry="15" fill="#fef3c7" stroke="#fde047" stroke-width="3"/>
+  <text x="200" y="220" fill="#fde047" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="1.5" text-anchor="middle">НАУРЫЗ КӨЖЕ</text>
+</svg>

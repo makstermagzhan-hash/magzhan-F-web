@@ -1,16 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
-  <defs>
-    <linearGradient id="g_bata" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1e3a8a"/>
-      <stop offset="100%" stop-color="#1e40af"/>
-    </linearGradient>
-  </defs>
+  <defs><linearGradient id="g_bata" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#1e40af"/></linearGradient></defs>
   <rect width="400" height="240" fill="url(#g_bata)"/>
   <rect x="10" y="10" width="380" height="220" rx="14" fill="none" stroke="#facc15" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 6"/>
-  
-      <path d="M150 175 C135 135 145 95 175 95 C188 95 195 115 195 140 L195 175 Z" fill="#fde68a" stroke="#f59e0b" stroke-width="3"/>
-      <path d="M250 175 C265 135 255 95 225 95 C212 95 205 115 205 140 L205 175 Z" fill="#fde68a" stroke="#f59e0b" stroke-width="3"/>
-      <path d="M175 75 Q200 55 225 75" stroke="#facc15" stroke-width="4" fill="none" stroke-linecap="round"/>
-    
-  <text x="200" y="220" fill="#fde047" font-family="Arial, sans-serif" font-size="13" font-weight="bold" letter-spacing="2" text-anchor="middle">БАТА БЕРУ</text>
+  <path d="M150 170 C135 130 145 95 175 95 C188 95 195 115 195 140 L195 170 Z" fill="#fde68a"/><path d="M250 170 C265 130 255 95 225 95 C212 95 205 115 205 140 L205 170 Z" fill="#fde68a"/>
+  <text x="200" y="220" fill="#fde047" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="1.5" text-anchor="middle">БАТА БЕРУ</text>
 </svg>

@@ -1,16 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
-  <defs>
-    <linearGradient id="g_zhylu" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#7f1d1d"/>
-      <stop offset="100%" stop-color="#991b1b"/>
-    </linearGradient>
-  </defs>
+  <defs><linearGradient id="g_zhylu" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7f1d1d"/><stop offset="100%" stop-color="#991b1b"/></linearGradient></defs>
   <rect width="400" height="240" fill="url(#g_zhylu)"/>
   <rect x="10" y="10" width="380" height="220" rx="14" fill="none" stroke="#facc15" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 6"/>
-  
-      <path d="M140 140 Q200 195 260 140" stroke="#fde047" stroke-width="5" fill="none" stroke-linecap="round"/>
-      <path d="M200 145 C165 120 165 85 188 85 C196 85 200 94 200 94 C200 94 204 85 212 85 C235 85 235 120 200 145 Z" fill="#facc15"/>
-      <circle cx="140" cy="135" r="10" fill="#fde047"/><circle cx="260" cy="135" r="10" fill="#fde047"/>
-    
-  <text x="200" y="220" fill="#fde047" font-family="Arial, sans-serif" font-size="13" font-weight="bold" letter-spacing="2" text-anchor="middle">ЖЫЛУ ЖИНАУ</text>
+  <path d="M200 175 C140 135 135 85 175 85 C192 85 200 100 200 100 C200 100 208 85 225 85 C265 85 260 135 200 175 Z" fill="#facc15" stroke="#fef08a" stroke-width="3"/>
+  <text x="200" y="220" fill="#fde047" font-family="Arial, sans-serif" font-size="12" font-weight="bold" letter-spacing="1.5" text-anchor="middle">ЖЫЛУ ЖИНАУ</text>
 </svg>
