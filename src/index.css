@@ -471,36 +471,3 @@ body {
   border-color: #dc2626;
   color: #7f1d1d;
 }
-/* YouTube видео фон стильдері */
-.hero-banner {
-  position: relative;
-  overflow: hidden;
-}
-.hero-video-wrap {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-.hero-video-wrap iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 56.25vw;
-  min-height: 100%;
-  min-width: 177.77vh;
-  transform: translate(-50%, -50%) scale(1.03);
-  border: 0;
-}
-.hero-video-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(11, 25, 44, 0.38) 0%, rgba(11, 25, 44, 0.68) 100%);
-}
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-
