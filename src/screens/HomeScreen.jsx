@@ -1,15 +1,15 @@
-﻿import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect, useRef } from 'react';
 import { TRADITIONS, CATEGORIES } from '../data/traditions.js';
 import { useFavs } from '../store/FavsContext.jsx';
 import { fetchTraditionPhoto } from '../api/wikiApi.js';
 import TraditionCard from '../components/TraditionCard.jsx';
 import Btn from '../components/Btn.jsx';
 
-// Осы жерге кез келген YouTube видеосының ID-ін қоюға болады (мысалы: https://www.youtube.com/watch?v=VIDEO_ID)
 const YOUTUBE_VIDEO_ID = 'U_hzx7rwyp8';
 
 export default function HomeScreen({ setScreen, openDetails }) {
   const { favIds, readIds } = useFavs();
+  const playerContainerRef = useRef(null);
 
   const totalCount = TRADITIONS.length;
   const catCount = CATEGORIES.length - 1;
@@ -35,6 +35,56 @@ export default function HomeScreen({ setScreen, openDetails }) {
     };
   }, [dailyTradition]);
 
+  useEffect(() => {
+    let player;
+    const initPlayer = () => {
+      if (!playerContainerRef.current || !window.YT || !window.YT.Player) return;
+      player = new window.YT.Player(playerContainerRef.current, {
+        videoId: YOUTUBE_VIDEO_ID,
+        playerVars: {
+          autoplay: 1,
+          mute: 1,
+          loop: 1,
+          playlist: YOUTUBE_VIDEO_ID,
+          controls: 0,
+          showinfo: 0,
+          rel: 0,
+          modestbranding: 1,
+          playsinline: 1,
+          vq: 'hd1080',
+        },
+        events: {
+          onReady: (e) => {
+            e.target.mute();
+            e.target.setPlaybackQuality('hd1080');
+            e.target.playVideo();
+          },
+          onStateChange: (e) => {
+            if (e.data === window.YT.PlayerState.PLAYING) {
+              e.target.setPlaybackQuality('hd1080');
+            }
+          },
+        },
+      });
+    };
+
+    if (window.YT && window.YT.Player) {
+      initPlayer();
+    } else {
+      const existingScript = document.querySelector('script[src="https://www.youtube.com/iframe_api"]');
+      if (!existingScript) {
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        document.body.appendChild(tag);
+      }
+      window.onYouTubeIframeAPIReady = initPlayer;
+    }
+
+    return () => {
+      if (player && player.destroy) player.destroy();
+    };
+  }, []);
+
   const openRandom = () => {
     const rnd = TRADITIONS[Math.floor(Math.random() * totalCount)];
     openDetails(rnd);
@@ -44,12 +94,7 @@ export default function HomeScreen({ setScreen, openDetails }) {
     <div>
       <section className="hero-banner">
         <div className="hero-video-wrap" aria-hidden="true">
-          <iframe
-            src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
-            title="Қазақстан дәстүрлері фондық бейне"
-            allow="autoplay; encrypted-media"
-            frameBorder="0"
-          />
+          <div ref={playerContainerRef} />
           <div className="hero-video-overlay" />
         </div>
 
@@ -143,4 +188,3 @@ export default function HomeScreen({ setScreen, openDetails }) {
     </div>
   );
 }
-

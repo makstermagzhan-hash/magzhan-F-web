@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #eef2f5;
   --surface: rgba(255, 255, 255, 0.94);
   --surface-solid: #ffffff;
@@ -491,15 +491,16 @@ body {
   height: 56.25vw;
   min-height: 100%;
   min-width: 177.77vh;
-  transform: translate(-50%, -50%) scale(1.18);
+  transform: translate(-50%, -50%) scale(1.03);
   border: 0;
 }
 .hero-video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(11, 25, 44, 0.62) 0%, rgba(11, 25, 44, 0.85) 100%);
+  background: linear-gradient(180deg, rgba(11, 25, 44, 0.38) 0%, rgba(11, 25, 44, 0.68) 100%);
 }
 .hero-content {
   position: relative;
   z-index: 1;
 }
+
