@@ -71,7 +71,7 @@ const ITEMS = [
 ];
 
 const SHAPES = {
-  shildehana: `<path d="M185 65 A45 45 0 1 0 235 125 A36 36 0 1 1 185 65 Z" fill="#facc15"/><polygon points="240,68 244,78 255,78 246,84 249,95 240,88 231,95 234,84 225,78 236,78" fill="#fef08a"/><circle cx="135" cy="95" r="4" fill="#fef08a"/><circle cx="265" cy="135" r="4" fill="#fef08a"/><path d="M140 165 Q200 185 260 165" stroke="#fde047" stroke-width="4" fill="none" stroke-linecap="round"/>`,
+  shildehana: `<ellipse cx="200" cy="144" rx="54" ry="30" fill="#fef3c7" stroke="#facc15" stroke-width="3.5"/><circle cx="174" cy="142" r="18" fill="#fde68a" stroke="#f59e0b" stroke-width="2.5"/><circle cx="169" cy="139" r="2.2" fill="#1e293b"/><circle cx="179" cy="139" r="2.2" fill="#1e293b"/><path d="M170 147 Q174 151 178 147" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round"/><path d="M192 126 Q226 122 246 144 Q226 166 192 162 Z" fill="#38bdf8" stroke="#facc15" stroke-width="2.5"/><path d="M150 96 L154 106 L165 106 L156 112 L159 122 L150 116 L141 122 L144 112 L135 106 L146 106 Z" fill="#facc15"/><path d="M248 84 L252 94 L263 94 L254 100 L257 110 L248 104 L239 110 L242 100 L233 94 L244 94 Z" fill="#fde047"/><path d="M200 66 L205 78 L218 78 L207 85 L211 97 L200 90 L189 97 L193 85 L182 78 L195 78 Z" fill="#facc15" stroke="#fef08a" stroke-width="1.5"/>`,
   besik: `<path d="M115 168 Q200 205 285 168" stroke="#facc15" stroke-width="7" fill="none" stroke-linecap="round"/><rect x="135" y="112" width="130" height="48" rx="8" fill="#b45309" stroke="#fde047" stroke-width="3.5"/><path d="M142 112 L142 82 M258 112 L258 82 M136 82 L264 82" stroke="#facc15" stroke-width="5" stroke-linecap="round"/><path d="M155 112 L175 160 M225 112 L245 160" stroke="#fef08a" stroke-width="3"/>`,
   qyrqyn: `<path d="M135 115 Q135 178 200 178 Q265 178 265 115 Z" fill="#d97706" stroke="#facc15" stroke-width="4"/><ellipse cx="200" cy="115" rx="65" ry="14" fill="#38bdf8" stroke="#fef3c7" stroke-width="3"/><path d="M225 112 L262 76" stroke="#fde047" stroke-width="5" stroke-linecap="round"/><ellipse cx="222" cy="114" rx="12" ry="7" fill="#facc15"/><circle cx="185" cy="145" r="9" fill="none" stroke="#e2e8f0" stroke-width="3"/>`,
   tusau: `<path d="M110 148 Q200 128 290 148" stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round"/><path d="M110 148 Q200 128 290 148" stroke="#111827" stroke-width="10" stroke-dasharray="14 14" fill="none" stroke-linecap="round"/><line x1="175" y1="88" x2="222" y2="165" stroke="#e2e8f0" stroke-width="5" stroke-linecap="round"/><line x1="225" y1="88" x2="178" y2="165" stroke="#e2e8f0" stroke-width="5" stroke-linecap="round"/><circle cx="172" cy="80" r="11" fill="none" stroke="#facc15" stroke-width="4"/><circle cx="228" cy="80" r="11" fill="none" stroke="#facc15" stroke-width="4"/>`,
@@ -148,6 +148,7 @@ ITEMS.forEach(([id, bg1, bg2, label, shapeKey]) => {
 });
 
 console.log('Барлық 56 дәстүрдің бірегей суреттері сәтті жаңартылды!');
+
 
 
 
