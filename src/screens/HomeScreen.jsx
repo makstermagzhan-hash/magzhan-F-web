@@ -6,7 +6,7 @@ import TraditionCard from '../components/TraditionCard.jsx';
 import Btn from '../components/Btn.jsx';
 
 // Осы жерге кез келген YouTube видеосының ID-ін қоюға болады (мысалы: https://www.youtube.com/watch?v=VIDEO_ID)
-const YOUTUBE_VIDEO_ID = 'r4p8qxGbpOk';
+const YOUTUBE_VIDEO_ID = 'U_hzx7rwyp8';
 
 export default function HomeScreen({ setScreen, openDetails }) {
   const { favIds, readIds } = useFavs();
@@ -143,3 +143,4 @@ export default function HomeScreen({ setScreen, openDetails }) {
     </div>
   );
 }
+
