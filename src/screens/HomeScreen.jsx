@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { TRADITIONS, CATEGORIES } from '../data/traditions.js';
 import { useFavs } from '../store/FavsContext.jsx';
 import { fetchTraditionPhoto } from '../api/wikiApi.js';
 import TraditionCard from '../components/TraditionCard.jsx';
 import Btn from '../components/Btn.jsx';
+
+// Осы жерге кез келген YouTube видеосының ID-ін қоюға болады (мысалы: https://www.youtube.com/watch?v=VIDEO_ID)
+const YOUTUBE_VIDEO_ID = 'r4p8qxGbpOk';
 
 export default function HomeScreen({ setScreen, openDetails }) {
   const { favIds, readIds } = useFavs();
@@ -40,37 +43,49 @@ export default function HomeScreen({ setScreen, openDetails }) {
   return (
     <div>
       <section className="hero-banner">
-        <h1>Қазақстан дәстүрлері</h1>
-        <p>
-          Қазақ халқының ғасырлар бойы жалғасып келе жатқан салт-дәстүрлері:
-          той мен мерекеден бастап қонақжайлылыққа дейін.
-        </p>
-
-        <div className="hero-btns">
-          <Btn variant="gold" onClick={() => setScreen('traditions')}>
-            Дәстүрлерді көру
-          </Btn>
-          <Btn variant="gold" onClick={openRandom}>
-            Кездейсоқ дәстүр
-          </Btn>
+        <div className="hero-video-wrap" aria-hidden="true">
+          <iframe
+            src={`https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1`}
+            title="Қазақстан дәстүрлері фондық бейне"
+            allow="autoplay; encrypted-media"
+            frameBorder="0"
+          />
+          <div className="hero-video-overlay" />
         </div>
 
-        <div className="stats-row">
-          <div className="stat-card">
-            <span className="stat-num">{totalCount}</span>
-            <span className="stat-label">дәстүр</span>
+        <div className="hero-content">
+          <h1>Қазақстан дәстүрлері</h1>
+          <p>
+            Қазақ халқының ғасырлар бойы жалғасып келе жатқан салт-дәстүрлері:
+            той мен мерекеден бастап қонақжайлылыққа дейін.
+          </p>
+
+          <div className="hero-btns">
+            <Btn variant="gold" onClick={() => setScreen('traditions')}>
+              Дәстүрлерді көру
+            </Btn>
+            <Btn variant="gold" onClick={openRandom}>
+              Кездейсоқ дәстүр
+            </Btn>
           </div>
-          <div className="stat-card">
-            <span className="stat-num">{catCount}</span>
-            <span className="stat-label">санат</span>
-          </div>
-          <div className="stat-card">
-            <span className="stat-num">{readCount}</span>
-            <span className="stat-label">оқылған</span>
-          </div>
-          <div className="stat-card">
-            <span className="stat-num">{favIds.length}</span>
-            <span className="stat-label">таңдаулыда</span>
+
+          <div className="stats-row">
+            <div className="stat-card">
+              <span className="stat-num">{totalCount}</span>
+              <span className="stat-label">дәстүр</span>
+            </div>
+            <div className="stat-card">
+              <span className="stat-num">{catCount}</span>
+              <span className="stat-label">санат</span>
+            </div>
+            <div className="stat-card">
+              <span className="stat-num">{readCount}</span>
+              <span className="stat-label">оқылған</span>
+            </div>
+            <div className="stat-card">
+              <span className="stat-num">{favIds.length}</span>
+              <span className="stat-label">таңдаулыда</span>
+            </div>
           </div>
         </div>
       </section>
