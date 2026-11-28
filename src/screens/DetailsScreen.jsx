@@ -1,33 +1,41 @@
-﻿import React, { useEffect, useState } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { useFavs } from '../store/FavsContext.jsx';
-import { fetchWikiInfo, fetchTraditionPhoto } from '../api/wikiApi.js';
+import { fetchTraditionPhoto } from '../api/wikiApi.js';
 import Btn from '../components/Btn.jsx';
 
 export default function DetailsScreen({ item, onBack }) {
-  const { isFav, toggleFav, markAsRead } = useFavs();
+  const { favIds, toggleFav, markRead } = useFavs();
   const [wiki, setWiki] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [photo, setPhoto] = useState(item?.image || '');
-  const [loading, setLoading] = useState(false);
+
+  const saved = item ? favIds.includes(item.id) : false;
 
   useEffect(() => {
     if (!item) return;
-    markAsRead(item.id);
+    markRead(item.id);
     setPhoto(item.image);
-
-    let active = true;
     setLoading(true);
     setWiki(null);
 
-    Promise.all([
-      fetchWikiInfo(item.title),
-      fetchTraditionPhoto(item.title, item.image, item.id),
-    ]).then(([wikiData, photoUrl]) => {
-      if (active) {
-        setWiki(wikiData);
-        if (photoUrl) setPhoto(photoUrl);
-        setLoading(false);
-      }
+    let active = true;
+
+    fetchTraditionPhoto(item.title, item.image, item.id).then((url) => {
+      if (active && url) setPhoto(url);
     });
+
+    const query = encodeURIComponent(item.title);
+    fetch(`https://kk.wikipedia.org/api/rest_v1/page/summary/${query}`)
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (active) {
+          setWiki(data);
+          setLoading(false);
+        }
+      })
+      .catch(() => {
+        if (active) setLoading(false);
+      });
 
     return () => {
       active = false;
@@ -35,24 +43,21 @@ export default function DetailsScreen({ item, onBack }) {
   }, [item]);
 
   if (!item) return null;
-  const saved = isFav(item.id);
 
   return (
     <div className="main-wrap">
-      <div className="panel">
+      <div className="details-card">
         <div style={{ marginBottom: '18px' }}>
           <Btn variant="outline" onClick={onBack}>
             Артқа қайту
           </Btn>
         </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '26px', alignItems: 'center' }}>
+        <div className="details-grid">
           <div
-            className="featured-art"
+            className="details-art"
             style={{
-              width: '260px',
-              height: '240px',
-              padding: photo === item.image ? '18px' : '0',
+              padding: photo === item.image ? '24px' : '0',
               overflow: 'hidden',
             }}
           >
@@ -62,61 +67,43 @@ export default function DetailsScreen({ item, onBack }) {
               onError={() => setPhoto(item.image)}
               style={
                 photo === item.image
-                  ? { width: '135px', height: '135px', objectFit: 'contain' }
+                  ? { width: '160px', height: '160px', objectFit: 'contain' }
                   : { width: '100%', height: '100%', objectFit: 'cover' }
               }
             />
           </div>
 
-          <div style={{ flex: 1, minWidth: '260px' }}>
-            <span className="badge">{item.category}</span>
-            <h1 style={{ marginBottom: '10px' }}>{item.title}</h1>
-            <p style={{ marginBottom: '16px' }}>{item.fullDesc}</p>
-
-            <p
-              style={{
-                background: 'rgba(212, 166, 52, 0.14)',
-                padding: '12px 16px',
-                borderRadius: '10px',
-                borderLeft: '4px solid var(--primary)',
-                marginBottom: '18px',
-              }}
-            >
-              <strong>Тәрбиелік мәні:</strong> {item.meaning}
+          <div>
+            <span className="pill-gold">{item.category}</span>
+            <h1 style={{ margin: '10px 0 12px' }}>{item.title}</h1>
+            <p style={{ lineHeight: '1.6', marginBottom: '16px' }}>
+              {item.fullDesc || item.shortDesc}
             </p>
 
-            <div
-              style={{
-                background: 'rgba(21, 94, 117, 0.1)',
-                padding: '14px 16px',
-                borderRadius: '10px',
-                borderLeft: '4px solid var(--teal)',
-                marginBottom: '18px',
-              }}
-            >
+            {item.meaning && (
+              <div className="meaning-box">
+                <strong>Тәрбиелік мәні:</strong> {item.meaning}
+              </div>
+            )}
+
+            <div className="wiki-box">
               <strong>Энциклопедиялық анықтама (Wikipedia API):</strong>
               {loading && (
                 <p style={{ color: 'var(--muted)', marginTop: '6px' }}>
-                  Деректер жүктелуде...
+                  Жүктелуде...
                 </p>
               )}
               {!loading && wiki && wiki.extract && (
                 <>
-                  <p style={{ marginTop: '6px', fontSize: '0.93rem' }}>
+                  <p style={{ marginTop: '6px', lineHeight: '1.55' }}>
                     {wiki.extract}
                   </p>
-                  {wiki.pageUrl && (
+                  {wiki.content_urls?.desktop?.page && (
                     <a
-                      href={wiki.pageUrl}
+                      href={wiki.content_urls.desktop.page}
                       target="_blank"
                       rel="noreferrer"
-                      style={{
-                        display: 'inline-block',
-                        marginTop: '8px',
-                        color: 'var(--primary)',
-                        fontWeight: 700,
-                        textDecoration: 'none',
-                      }}
+                      className="wiki-link"
                     >
                       Мақаланы толық оқу ↗
                     </a>
@@ -130,18 +117,24 @@ export default function DetailsScreen({ item, onBack }) {
               )}
             </div>
 
-            <div style={{ marginTop: '18px', marginBottom: '18px' }}>
-          <video
-            key={item.id}
-            src={`/videos/${item.id}.mp4`}
-            controls
-            playsInline
-            onError={(e) => { e.currentTarget.parentElement.style.display = 'none'; }}
-            style={{ width: '100%', borderRadius: '14px', maxHeight: '380px', backgroundColor: '#000' }}
-          />
-        </div>
+            {item.id === 'tusau' && (
+              <div style={{ margin: '18px 0' }}>
+                <video
+                  src="/videos/tusau.mp4"
+                  controls
+                  playsInline
+                  style={{
+                    width: '100%',
+                    borderRadius: '14px',
+                    maxHeight: '380px',
+                    backgroundColor: '#000',
+                    display: 'block',
+                  }}
+                />
+              </div>
+            )}
 
-        <Btn variant="gold" onClick={() => toggleFav(item.id)}>
+            <Btn variant="gold" onClick={() => toggleFav(item.id)}>
               {saved ? 'Таңдаулылардан өшіру' : 'Таңдаулыларға қосу'}
             </Btn>
           </div>
