@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { useFavs } from '../store/FavsContext.jsx';
 import { fetchWikiInfo, fetchTraditionPhoto } from '../api/wikiApi.js';
 import Btn from '../components/Btn.jsx';
@@ -130,7 +130,18 @@ export default function DetailsScreen({ item, onBack }) {
               )}
             </div>
 
-            <Btn variant="gold" onClick={() => toggleFav(item.id)}>
+            <div style={{ marginTop: '18px', marginBottom: '18px' }}>
+          <video
+            key={item.id}
+            src={`/videos/${item.id}.mp4`}
+            controls
+            playsInline
+            onError={(e) => { e.currentTarget.parentElement.style.display = 'none'; }}
+            style={{ width: '100%', borderRadius: '14px', maxHeight: '380px', backgroundColor: '#000' }}
+          />
+        </div>
+
+        <Btn variant="gold" onClick={() => toggleFav(item.id)}>
               {saved ? 'Таңдаулылардан өшіру' : 'Таңдаулыларға қосу'}
             </Btn>
           </div>
