@@ -134,6 +134,17 @@ export default function DetailsScreen({ item, onBack }) {
               </div>
             )}
 
+            {item.id === 'tusau' && (
+              <div style={{ margin: '18px 0' }}>
+                <video
+                  src="/videos/tusau.mp4"
+                  controls
+                  playsInline
+                  style={{ width: '100%', borderRadius: '14px', maxHeight: '380px', backgroundColor: '#000', display: 'block' }}
+                />
+              </div>
+            )}
+
             <Btn variant="gold" onClick={() => toggleFav(item.id)}>
               {saved ? 'Таңдаулылардан өшіру' : 'Таңдаулыларға қосу'}
             </Btn>
@@ -143,3 +154,4 @@ export default function DetailsScreen({ item, onBack }) {
     </div>
   );
 }
+
