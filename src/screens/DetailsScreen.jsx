@@ -61,53 +61,16 @@ export default function DetailsScreen(props) {
 
   return (
     <div style={{ maxWidth: '1040px', margin: '32px auto', padding: '0 20px' }}>
-      <style>{`
-        .dt-card {
-          background: #ffffff;
-          color: #111827;
-          border: 1px solid rgba(15, 23, 42, 0.1);
-          border-radius: 20px;
-          padding: 28px 34px 36px;
-          box-shadow: 0 14px 40px rgba(0, 0, 0, 0.14);
-        }
-        .dt-desc { color: #374151; }
-        .dt-meaning {
-          background: rgba(217, 155, 38, 0.13);
-          border-left: 4px solid #d99b26;
-          color: #1f2937;
-        }
-        .dt-wiki {
-          background: rgba(14, 116, 144, 0.08);
-          border-left: 4px solid #0e7490;
-          color: #1f2937;
-        }
-        .dt-wiki-text { color: #334155; }
-
-        body.dark .dt-card, [data-theme="dark"] .dt-card, .dark .dt-card {
-          background: #131d2b;
-          color: #f8fafc;
-          border-color: rgba(255, 255, 255, 0.08);
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-        }
-        body.dark .dt-desc, [data-theme="dark"] .dt-desc, .dark .dt-desc {
-          color: #cbd5e1;
-        }
-        body.dark .dt-meaning, [data-theme="dark"] .dt-meaning, .dark .dt-meaning {
-          background: rgba(242, 201, 76, 0.1);
-          border-left-color: #f2c94c;
-          color: #f1f5f9;
-        }
-        body.dark .dt-wiki, [data-theme="dark"] .dt-wiki, .dark .dt-wiki {
-          background: rgba(14, 116, 144, 0.16);
-          border-left-color: #38bdf8;
-          color: #f1f5f9;
-        }
-        body.dark .dt-wiki-text, [data-theme="dark"] .dt-wiki-text, .dark .dt-wiki-text {
-          color: #cbd5e1;
-        }
-      `}</style>
-
-      <div className="dt-card">
+      <div
+        style={{
+          background: 'var(--card, var(--surface, var(--bg-card, #131d2b)))',
+          color: 'var(--text, inherit)',
+          border: '1px solid var(--border, rgba(148, 163, 184, 0.18))',
+          borderRadius: '20px',
+          padding: '28px 34px 36px',
+          boxShadow: '0 14px 40px rgba(0, 0, 0, 0.18)',
+        }}
+      >
         <div style={{ marginBottom: '26px' }}>
           <Btn variant="outline" onClick={handleBack}>
             Артқа қайту
@@ -134,7 +97,7 @@ export default function DetailsScreen(props) {
               alignItems: 'center',
               justifyContent: 'center',
               overflow: 'hidden',
-              boxShadow: '0 10px 26px rgba(0, 0, 0, 0.18)',
+              boxShadow: '0 10px 26px rgba(0, 0, 0, 0.2)',
             }}
           >
             <img
@@ -148,7 +111,7 @@ export default function DetailsScreen(props) {
                       height: '100px',
                       objectFit: 'contain',
                       borderRadius: '6px',
-                      boxShadow: '0 6px 18px rgba(0, 0, 0, 0.28)',
+                      boxShadow: '0 6px 18px rgba(0, 0, 0, 0.3)',
                     }
                   : {
                       width: '100%',
@@ -188,8 +151,8 @@ export default function DetailsScreen(props) {
             </h1>
 
             <p
-              className="dt-desc"
               style={{
+                opacity: 0.85,
                 lineHeight: '1.65',
                 fontSize: '0.96rem',
                 marginBottom: '18px',
@@ -200,8 +163,9 @@ export default function DetailsScreen(props) {
 
             {item.meaning && (
               <div
-                className="dt-meaning"
                 style={{
+                  background: 'rgba(217, 155, 38, 0.12)',
+                  borderLeft: '4px solid #d99b26',
                   borderRadius: '10px',
                   padding: '13px 16px',
                   marginBottom: '14px',
@@ -214,8 +178,9 @@ export default function DetailsScreen(props) {
             )}
 
             <div
-              className="dt-wiki"
               style={{
+                background: 'rgba(14, 116, 144, 0.12)',
+                borderLeft: '4px solid #0ea5e9',
                 borderRadius: '10px',
                 padding: '15px 18px',
                 marginBottom: '20px',
@@ -227,12 +192,12 @@ export default function DetailsScreen(props) {
               </strong>
 
               {loading && (
-                <p className="dt-wiki-text" style={{ margin: 0 }}>Жүктелуде...</p>
+                <p style={{ opacity: 0.75, margin: 0 }}>Жүктелуде...</p>
               )}
 
               {!loading && wiki && wiki.extract && (
                 <>
-                  <p className="dt-wiki-text" style={{ margin: '0 0 12px', lineHeight: '1.6' }}>
+                  <p style={{ margin: '0 0 12px', lineHeight: '1.6', opacity: 0.9 }}>
                     {wiki.extract}
                   </p>
                   {wiki.content_urls?.desktop?.page && (
@@ -255,7 +220,7 @@ export default function DetailsScreen(props) {
               )}
 
               {!loading && (!wiki || !wiki.extract) && (
-                <p className="dt-wiki-text" style={{ margin: 0, fontSize: '0.88rem' }}>
+                <p style={{ opacity: 0.75, margin: 0, fontSize: '0.88rem' }}>
                   Бұл тақырып бойынша қосымша энциклопедиялық мақала табылмады.
                 </p>
               )}
