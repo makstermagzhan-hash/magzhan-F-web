@@ -3,8 +3,13 @@ import { useFavs } from '../store/FavsContext.jsx';
 import { fetchTraditionPhoto } from '../api/wikiApi.js';
 import Btn from '../components/Btn.jsx';
 
-export default function DetailsScreen({ item, onBack }) {
-  const { favIds, toggleFav, markRead } = useFavs();
+export default function DetailsScreen(props) {
+  const { item, onBack, goBack, setScreen } = props;
+  const favs = useFavs() || {};
+  const favIds = favs.favIds || [];
+  const toggleFav = favs.toggleFav || favs.toggleFavorite;
+  const markRead = favs.markRead || favs.toggleRead || favs.addRead;
+
   const [wiki, setWiki] = useState(null);
   const [loading, setLoading] = useState(true);
   const [photo, setPhoto] = useState(item?.image || '');
@@ -13,7 +18,9 @@ export default function DetailsScreen({ item, onBack }) {
 
   useEffect(() => {
     if (!item) return;
-    markRead(item.id);
+    if (typeof markRead === 'function') {
+      markRead(item.id);
+    }
     setPhoto(item.image);
     setLoading(true);
     setWiki(null);
@@ -44,11 +51,17 @@ export default function DetailsScreen({ item, onBack }) {
 
   if (!item) return null;
 
+  const handleBack = () => {
+    if (typeof onBack === 'function') onBack();
+    else if (typeof goBack === 'function') goBack();
+    else if (typeof setScreen === 'function') setScreen('traditions');
+  };
+
   return (
     <div className="main-wrap">
       <div className="details-card">
         <div style={{ marginBottom: '18px' }}>
-          <Btn variant="outline" onClick={onBack}>
+          <Btn variant="outline" onClick={handleBack}>
             Артқа қайту
           </Btn>
         </div>
@@ -134,18 +147,10 @@ export default function DetailsScreen({ item, onBack }) {
               </div>
             )}
 
-            {item.id === 'tusau' && (
-              <div style={{ margin: '18px 0' }}>
-                <video
-                  src="/videos/tusau.mp4"
-                  controls
-                  playsInline
-                  style={{ width: '100%', borderRadius: '14px', maxHeight: '380px', backgroundColor: '#000', display: 'block' }}
-                />
-              </div>
-            )}
-
-            <Btn variant="gold" onClick={() => toggleFav(item.id)}>
+            <Btn
+              variant="gold"
+              onClick={() => typeof toggleFav === 'function' && toggleFav(item.id)}
+            >
               {saved ? 'Таңдаулылардан өшіру' : 'Таңдаулыларға қосу'}
             </Btn>
           </div>
@@ -154,4 +159,3 @@ export default function DetailsScreen({ item, onBack }) {
     </div>
   );
 }
-
